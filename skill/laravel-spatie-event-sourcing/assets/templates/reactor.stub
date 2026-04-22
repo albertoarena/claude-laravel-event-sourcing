@@ -1,0 +1,10 @@
+<?php
+
+namespace App\Domain\{{ context }}\Reactors;
+
+use Spatie\EventSourcing\EventHandlers\EventHandler;
+
+class {{ name }}Reactor extends EventHandler
+{
+    // TODO: Add on<EventName> methods that trigger side effects
+}

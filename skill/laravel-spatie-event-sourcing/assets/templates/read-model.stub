@@ -1,0 +1,12 @@
+<?php
+
+namespace App\Domain\{{ context }}\ReadModels;
+
+use Spatie\EventSourcing\Projections\Projection;
+
+class {{ name }} extends Projection
+{
+    protected $guarded = [];
+
+    protected $table = '{{ table }}';
+}

@@ -1,0 +1,15 @@
+<?php
+
+use App\Domain\{{ context }}\Aggregates\{{ name }}Aggregate;
+
+// TODO: Import event classes
+
+it('records {{ eventName }} when {{ action }}', function () {
+    $uuid = fake()->uuid();
+
+    {{ name }}Aggregate::fake($uuid)
+        ->when(fn ({{ name }}Aggregate $a) => $a->{{ method }}(/* args */))
+        ->assertRecorded([
+            // new {{ eventName }}(/* expected payload */),
+        ]);
+});

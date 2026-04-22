@@ -1,0 +1,14 @@
+<?php
+
+namespace App\Domain\{{ context }}\Aggregates;
+
+use Spatie\EventSourcing\AggregateRoots\AggregateRoot;
+
+class {{ name }}Aggregate extends AggregateRoot
+{
+    // TODO: Add internal state properties
+
+    // TODO: Add command methods that call recordThat()
+
+    // TODO: Add apply methods that update internal state
+}

@@ -1,0 +1,12 @@
+<?php
+
+namespace App\Domain\{{ context }}\Projectors;
+
+use Spatie\EventSourcing\EventHandlers\Projectors\Projector;
+
+class {{ name }}Projector extends Projector
+{
+    // TODO: Add on<EventName> methods that build the read model
+    // Create: (new ReadModel([...]))->writeable()->save()
+    // Update: $model = ReadModel::uuid($uuid); $model->field = ...; $model->writeable()->save()
+}

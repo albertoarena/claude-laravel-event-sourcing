@@ -1,0 +1,11 @@
+<?php
+
+namespace App\Domain\{{ context }}\Commands;
+
+final readonly class {{ name }}Command
+{
+    public function __construct(
+        public string ${{ aggregateId }},
+        // TODO: Add command properties
+    ) {}
+}

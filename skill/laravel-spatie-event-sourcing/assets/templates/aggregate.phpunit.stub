@@ -1,0 +1,22 @@
+<?php
+
+namespace Tests\Feature\{{ context }};
+
+use App\Domain\{{ context }}\Aggregates\{{ name }}Aggregate;
+use Tests\TestCase;
+
+// TODO: Import event classes
+
+class {{ name }}AggregateTest extends TestCase
+{
+    public function test_it_records_{{ snake_event }}_when_{{ snake_action }}(): void
+    {
+        $uuid = fake()->uuid();
+
+        {{ name }}Aggregate::fake($uuid)
+            ->when(fn ({{ name }}Aggregate $a) => $a->{{ method }}(/* args */))
+            ->assertRecorded([
+                // new {{ eventName }}(/* expected payload */),
+            ]);
+    }
+}

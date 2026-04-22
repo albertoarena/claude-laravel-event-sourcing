@@ -1,0 +1,65 @@
+{
+  "skill_name": "laravel-spatie-event-sourcing",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "I want to add order management to my Laravel app using Spatie event sourcing. Orders can be placed, have line items added, shipped, and cancelled — but only if not already shipped. I need a standard orders read model and daily revenue statistics. Ship confirmation should email the customer.",
+      "expected_output": "Gate 1: ADR with OrderAggregate, 4 commands, 4 events, 2 projectors (sync + queued), 1 reactor. Gate 2: Full code generation with passing tests.",
+      "files": [],
+      "expectations": [
+        "An ADR file exists with sections for aggregates, commands, events, projectors, reactors",
+        "Events use past-tense domain names (OrderPlaced, LineItemAdded, OrderShipped, OrderCancelled)",
+        "ADR or code enforces 'cannot cancel shipped order'",
+        "Both a sync OrderProjector and a queued statistics projector exist",
+        "A reactor for sending ship/order confirmation email exists",
+        "Test files exist for aggregate, projector(s), and reactor",
+        "Files organized under app/Domain/Orders/",
+        "Command DTOs and handler classes exist",
+        "Read models extend Spatie\\EventSourcing\\Projections\\Projection, not plain Eloquent Model",
+        "Projectors use writeable()->save() pattern, not updateOrCreate"
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "I have an existing users table with CRUD controllers. Can you refactor it to use Spatie event sourcing?",
+      "expected_output": "Polite refusal explaining that CRUD-to-ES refactoring is out of scope, with suggestion to design greenfield alongside existing code.",
+      "files": [],
+      "expectations": [
+        "Response explicitly says CRUD-to-ES refactoring is out of scope",
+        "No PHP implementation files are produced",
+        "Suggests building greenfield alongside existing code"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I want to event-source my inventory tracking. Products can be received, sold, adjusted, and transferred between warehouses. I need a stock level projector.",
+      "expected_output": "The skill should run verify-setup.sh first. Since spatie/laravel-event-sourcing is not installed, it should stop and tell the user to install it — no ADR, no code generation.",
+      "files": [],
+      "expectations": [
+        "Response mentions that spatie/laravel-event-sourcing is not installed or missing",
+        "Response provides the command to install it (composer require spatie/laravel-event-sourcing)",
+        "No ADR is produced",
+        "No PHP implementation files are generated",
+        "The skill does not proceed to Gate 1 domain questions"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I need a reservation system for a hotel. Guests can make reservations, check in, check out, and cancel. Cancellation after check-in should be refused. I need a room availability projector and a confirmation email reactor.",
+      "expected_output": "Gate 1: ADR with ReservationAggregate, 4 commands, 4 events, 1 sync projector, 1 reactor. Gate 2: Full code generation with passing tests.",
+      "files": [],
+      "expectations": [
+        "An ADR file exists with sections for aggregates, commands, events, projectors, reactors",
+        "Events use past-tense domain names",
+        "ADR or code enforces 'cannot cancel after check-in'",
+        "A room availability projector exists",
+        "An email confirmation reactor exists",
+        "Test files exist for aggregate, projector, and reactor",
+        "Files organized under app/Domain/ (not flat app/Events/)",
+        "Command DTOs and handler classes exist",
+        "Read models extend Spatie\\EventSourcing\\Projections\\Projection, not plain Eloquent Model",
+        "Projectors use writeable()->save() pattern, not updateOrCreate"
+      ]
+    }
+  ]
+}

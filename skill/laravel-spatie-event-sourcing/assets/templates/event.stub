@@ -1,0 +1,12 @@
+<?php
+
+namespace App\Domain\{{ context }}\Events;
+
+use Spatie\EventSourcing\StoredEvents\ShouldBeStored;
+
+class {{ name }} extends ShouldBeStored
+{
+    public function __construct(
+        // TODO: Add readonly payload properties
+    ) {}
+}
