@@ -12,13 +12,30 @@ This skill guides you through a **two-gate workflow**:
 
 ## Installation
 
+### Option A: Per-project (recommended for teams)
+
+Add the skill to your Laravel project so it's shared via git with your team:
+
 ```bash
-# Clone into your Claude Code skills directory
+# From your Laravel project root
+mkdir -p .claude/skills
+git clone https://github.com/albertoarena/claude-laravel-event-sourcing.git /tmp/claude-les
+cp -r /tmp/claude-les/skill/laravel-spatie-event-sourcing .claude/skills/
+rm -rf /tmp/claude-les
+```
+
+The skill will be at `.claude/skills/laravel-spatie-event-sourcing/SKILL.md` inside your project. Claude Code picks it up automatically — no restart needed.
+
+### Option B: Global (all your projects)
+
+Install once for all your projects:
+
+```bash
 cd ~/.claude/skills
 git clone https://github.com/albertoarena/claude-laravel-event-sourcing.git
 ```
 
-The skill is at `skill/laravel-spatie-event-sourcing/SKILL.md`.
+The skill is at `~/.claude/skills/claude-laravel-event-sourcing/skill/laravel-spatie-event-sourcing/SKILL.md`.
 
 ## Prerequisites
 
