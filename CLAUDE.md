@@ -31,6 +31,12 @@ docs/                   — Human-readable documentation
 - Reference files provide detail that doesn't need to be in the main prompt.
 - Stub templates use `{{ placeholder }}` syntax.
 
+## Changelog
+
+- Every major change (new features, breaking changes, significant fixes) must be tracked in `CHANGELOG.md`.
+- Follow the [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format.
+- Add entries under `[Unreleased]` as changes are made. Move them to a versioned section on release.
+
 ## Git Commit Conventions
 
 ### Format

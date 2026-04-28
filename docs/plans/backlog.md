@@ -124,10 +124,10 @@ The spec (section 10) lists:
 
 ### L2. Add CHANGELOG.md
 
-**Status:** TODO
+**Status:** DONE
 **Impact:** Project hygiene
 
-Start with a single entry for the initial release. Keep it simple — no tooling, just a manually maintained file.
+Added `CHANGELOG.md` with initial release entry. Added changelog tracking rule to `CLAUDE.md`.
 
 ---
 
