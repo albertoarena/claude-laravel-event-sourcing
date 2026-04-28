@@ -96,6 +96,9 @@ Note: Read models extend `Spatie\EventSourcing\Projections\Projection` (not plai
 use App\Domain\Orders\Events\OrderPlaced;
 use App\Domain\Orders\Projectors\OrderProjector;
 use App\Domain\Orders\ReadModels\Order;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+
+uses(RefreshDatabase::class);
 
 it('creates an order row on OrderPlaced', function () {
     $event = new OrderPlaced(

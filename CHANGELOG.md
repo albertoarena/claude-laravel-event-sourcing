@@ -11,6 +11,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Human-readable workflow documentation (`docs/workflow.md`)
 - `.skill` package installation option in README
 
+### Fixed
+- Pest projector test pattern missing `RefreshDatabase` in `references/tdd-patterns.md`
+
 ## [0.1.0] - 2025
 
 ### Added

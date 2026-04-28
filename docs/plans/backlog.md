@@ -57,11 +57,10 @@ Missing stubs:
 
 ### M1. Fix Pest projector test pattern — missing RefreshDatabase
 
-**Status:** TODO
+**Status:** DONE
 **Impact:** Tests would fail — projector tests write to the database
 
-In `references/tdd-patterns.md`, the Pest projector test is missing `uses(RefreshDatabase::class)`.
-The PHPUnit version correctly includes it. One-line fix.
+Added `uses(RefreshDatabase::class)` to the Pest projector test example in `references/tdd-patterns.md`.
 
 ---
 
