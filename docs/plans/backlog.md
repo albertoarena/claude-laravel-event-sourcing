@@ -84,12 +84,10 @@ All examples use `Order::uuid('o-1')`, so this is required for generated code to
 
 ### M3. Enrich stub placeholders
 
-**Status:** TODO
+**Status:** WON'T FIX
 **Impact:** Better code generation guidance for Claude
 
-Current stubs use `// TODO:` comments where generated code should go. Consider replacing with named placeholders like `{{ stateProperties }}`, `{{ commandMethods }}`, `{{ applyMethods }}` so the SKILL.md instructions can reference them explicitly.
-
-**Alternative approach (recommended):** Keep stubs as structural scaffolds with `// TODO:` comments, but add a `references/stub-usage.md` file that documents how Claude should fill each stub. This avoids over-engineering the placeholder system while giving Claude clear instructions. The stubs then serve as the shape; the reference file provides the fill logic.
+Current stubs provide structure (namespace, imports, base class), while reference files and the ADR guide the actual code generation. Adding named placeholders or a stub-usage reference would add indirection without measurable benefit. The `// TODO:` comments serve as useful markers if generation is ever partial.
 
 ---
 
