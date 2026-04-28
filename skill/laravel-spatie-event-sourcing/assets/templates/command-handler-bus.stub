@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Domain\{{ context }}\CommandHandlers;
+
+use App\Domain\{{ context }}\Aggregates\{{ aggregate }}Aggregate;
+use App\Domain\{{ context }}\Commands\{{ name }}Command;
+
+final class {{ name }}Handler
+{
+    public function handle({{ name }}Command $command): void
+    {
+        {{ aggregate }}Aggregate::retrieve($command->{{ aggregateId }})
+            // TODO: Call aggregate method
+            ->persist();
+    }
+}

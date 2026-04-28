@@ -38,18 +38,11 @@ Fix approach: straightforward edits to `scripts/verify-setup.sh`. Single task, n
 
 ### H3. Add missing stub templates
 
-**Status:** TODO
+**Status:** DONE
 **Sub-plan:** [missing-stubs.md](./missing-stubs.md)
 **Impact:** Code generation completeness — every generated artifact type should have a stub
 
-Missing stubs:
-1. `migration.stub` — read model table migration
-2. `command-bus.stub` — command DTO with `Dispatchable` trait (bus style)
-3. `command-handler-bus.stub` — handler with `handle()` method (bus style)
-4. `projector.pest.stub` — Pest projector test
-5. `projector.phpunit.stub` — PHPUnit projector test
-6. `reactor.pest.stub` — Pest reactor test
-7. `reactor.phpunit.stub` — PHPUnit reactor test
+Added 6 stubs: `command-bus.stub`, `command-handler-bus.stub`, `projector.pest.stub`, `projector.phpunit.stub`, `reactor.pest.stub`, `reactor.phpunit.stub`. Skipped `migration.stub` — documented migration structure in SKILL.md Gate 2 instead. Added sync rule to CLAUDE.md.
 
 ---
 

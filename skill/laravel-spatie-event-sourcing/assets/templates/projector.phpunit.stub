@@ -1,0 +1,25 @@
+<?php
+
+namespace Tests\Feature\{{ context }};
+
+use App\Domain\{{ context }}\Events\{{ eventName }};
+use App\Domain\{{ context }}\Projectors\{{ name }}Projector;
+use App\Domain\{{ context }}\ReadModels\{{ readModel }};
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
+
+class {{ name }}ProjectorTest extends TestCase
+{
+    use RefreshDatabase;
+
+    public function test_it_creates_{{ snake_readModel }}_on_{{ snake_event }}(): void
+    {
+        $event = new {{ eventName }}(
+            // TODO: Add event constructor arguments
+        );
+
+        (new {{ name }}Projector())->on{{ eventName }}($event, aggregateUuid: fake()->uuid());
+
+        $this->assertNotNull({{ readModel }}::uuid(fake()->uuid()));
+    }
+}

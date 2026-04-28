@@ -1,7 +1,7 @@
 # Sub-plan: Missing Stub Templates
 
 **Parent:** [backlog.md](./backlog.md) — H3
-**Status:** TODO
+**Status:** DONE
 
 ## Goal
 

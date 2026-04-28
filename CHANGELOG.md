@@ -8,6 +8,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 - Backlog plan with sub-plans for pending improvements
+- Stub templates: `command-bus.stub`, `command-handler-bus.stub`, `projector.pest.stub`, `projector.phpunit.stub`, `reactor.pest.stub`, `reactor.phpunit.stub`
+- Migration structure guidance in SKILL.md Gate 2 (UUID primary key, no auto-increment, timestamps)
+- Stub/reference sync rule in CLAUDE.md
 - Human-readable workflow documentation (`docs/workflow.md`)
 - `.skill` package installation option in README
 

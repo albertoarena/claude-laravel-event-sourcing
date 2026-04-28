@@ -88,7 +88,7 @@ Generation order:
 4. Write command handlers (plain or bus-dispatched per project config)
 5. Write the aggregate root
 6. Write event classes
-7. Write projector(s) and read-model migration(s)
+7. Write projector(s) and read-model migration(s) — migrations must use a UUID primary key (`$table->uuid('uuid')->primary()`), no auto-increment, and include `$table->timestamps()`
 8. Write reactor(s)
 9. Register projectors and reactors in `config/event-sourcing.php`
 10. Run the test suite (`./vendor/bin/pest` or `./vendor/bin/phpunit`)

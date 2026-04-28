@@ -30,6 +30,7 @@ docs/                   — Human-readable documentation
 - When editing the skill, keep SKILL.md under 500 lines.
 - Reference files provide detail that doesn't need to be in the main prompt.
 - Stub templates use `{{ placeholder }}` syntax.
+- Stub templates and reference file examples must stay in sync. When updating test patterns in `references/tdd-patterns.md`, update the corresponding `.stub` files in `assets/templates/`, and vice versa.
 
 ## Changelog
 

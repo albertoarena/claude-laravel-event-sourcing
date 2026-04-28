@@ -1,0 +1,20 @@
+<?php
+
+use App\Domain\{{ context }}\Events\{{ eventName }};
+use App\Domain\{{ context }}\Reactors\{{ name }}Reactor;
+
+// TODO: Import the side-effect facade (Mail, Http, Bus, etc.)
+
+it('{{ sideEffect }} on {{ eventName }}', function () {
+    // TODO: Fake the side-effect facade
+    // e.g. Mail::fake();
+
+    $event = new {{ eventName }}(
+        // TODO: Add event constructor arguments
+    );
+
+    (new {{ name }}Reactor())->on{{ eventName }}($event);
+
+    // TODO: Assert the side effect was triggered
+    // e.g. Mail::assertSent(SomeMail::class);
+});

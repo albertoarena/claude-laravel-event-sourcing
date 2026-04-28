@@ -1,0 +1,31 @@
+<?php
+
+use App\Domain\{{ context }}\Events\{{ eventName }};
+use App\Domain\{{ context }}\Projectors\{{ name }}Projector;
+use App\Domain\{{ context }}\ReadModels\{{ readModel }};
+use Illuminate\Foundation\Testing\RefreshDatabase;
+
+uses(RefreshDatabase::class);
+
+it('creates {{ readModel }} on {{ eventName }}', function () {
+    $event = new {{ eventName }}(
+        // TODO: Add event constructor arguments
+    );
+
+    (new {{ name }}Projector())->on{{ eventName }}($event, aggregateUuid: fake()->uuid());
+
+    expect({{ readModel }}::uuid($event->aggregateUuid ?? fake()->uuid()))->not->toBeNull();
+});
+
+it('is idempotent — handles the same event twice', function () {
+    $uuid = fake()->uuid();
+    $event = new {{ eventName }}(
+        // TODO: Add event constructor arguments
+    );
+
+    $projector = new {{ name }}Projector();
+    $projector->on{{ eventName }}($event, aggregateUuid: $uuid);
+    $projector->on{{ eventName }}($event, aggregateUuid: $uuid);
+
+    expect({{ readModel }}::where('uuid', $uuid)->count())->toBe(1);
+});

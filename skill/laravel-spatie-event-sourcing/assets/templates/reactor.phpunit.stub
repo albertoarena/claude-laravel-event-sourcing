@@ -1,0 +1,27 @@
+<?php
+
+namespace Tests\Feature\{{ context }};
+
+use App\Domain\{{ context }}\Events\{{ eventName }};
+use App\Domain\{{ context }}\Reactors\{{ name }}Reactor;
+use Tests\TestCase;
+
+// TODO: Import the side-effect facade and mailable/notification class
+
+class {{ name }}ReactorTest extends TestCase
+{
+    public function test_it_{{ snake_sideEffect }}_on_{{ snake_event }}(): void
+    {
+        // TODO: Fake the side-effect facade
+        // e.g. Mail::fake();
+
+        $event = new {{ eventName }}(
+            // TODO: Add event constructor arguments
+        );
+
+        (new {{ name }}Reactor())->on{{ eventName }}($event);
+
+        // TODO: Assert the side effect was triggered
+        // e.g. Mail::assertSent(SomeMail::class);
+    }
+}
