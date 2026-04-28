@@ -93,12 +93,11 @@ Current stubs provide structure (namespace, imports, base class), while referenc
 
 ### M4. Use the spec's more aggressive skill description
 
-**Status:** TODO
+**Status:** PENDING DECISION
+**Sub-plan:** [skill-description.md](./skill-description.md)
 **Impact:** Better skill triggering — current description may under-trigger
 
-Replace the YAML `description` in SKILL.md with the version from `skill-spec.md` section 2, which includes explicit trigger phrases like "let's event-source X", "add ES to my Laravel project", etc.
-
-Single edit to SKILL.md frontmatter. No sub-plan needed.
+Proposed: merge the spec's aggressive trigger phrases with the current negative boundaries. See sub-plan for full before/after comparison and trade-offs.
 
 ---
 
