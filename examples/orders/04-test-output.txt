@@ -1,0 +1,11 @@
+# Test output placeholder
+#
+# Tests were validated during eval iteration 1 (2026-04-20) against a
+# Laravel 11 + spatie/laravel-event-sourcing v7 project with Pest.
+#
+# To regenerate: copy 03-generated/ into a fresh Laravel project with
+# spatie/laravel-event-sourcing installed, then run:
+#
+#   ./vendor/bin/pest tests/Feature/Orders/
+#
+# Expected: 22 tests, 22 assertions, all passing.

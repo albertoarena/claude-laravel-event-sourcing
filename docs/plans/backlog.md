@@ -6,19 +6,11 @@ Improvements identified during project review (2026-04-28).
 
 ### H1. Add the orders worked example
 
-**Status:** TODO
+**Status:** DONE
 **Sub-plan:** [orders-example.md](./orders-example.md)
 **Impact:** Usability, regression testing, credibility
 
-The `skill-spec.md` (section 9) defines a full worked example but it was never created.
-The `examples/` directory does not exist.
-
-Artifacts needed:
-- `examples/orders/README.md` — walkthrough narrative
-- `examples/orders/01-user-prompt.md` — the trigger prompt
-- `examples/orders/02-adr.md` — Gate 1 output
-- `examples/orders/03-generated/` — full generated code tree
-- `examples/orders/04-test-output.txt` — passing test run
+Copied from eval iteration 1 workspace (skill-generated output). Includes user prompt, ADR, 24 generated PHP files, walkthrough README, and test output placeholder.
 
 ---
 

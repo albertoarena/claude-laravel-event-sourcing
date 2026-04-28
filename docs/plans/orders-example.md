@@ -1,7 +1,7 @@
 # Sub-plan: Orders Worked Example
 
 **Parent:** [backlog.md](./backlog.md) — H1
-**Status:** TODO
+**Status:** DONE
 
 ## Goal
 
