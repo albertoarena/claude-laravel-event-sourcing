@@ -6,14 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-04-28
+
 ### Added
 - Orders worked example (`examples/orders/`) with ADR, 24 generated files, and walkthrough
-- Backlog plan with sub-plans for pending improvements
 - Stub templates: `command-bus.stub`, `command-handler-bus.stub`, `projector.pest.stub`, `projector.phpunit.stub`, `reactor.pest.stub`, `reactor.phpunit.stub`
 - Migration structure guidance in SKILL.md Gate 2 (UUID primary key, no auto-increment, timestamps)
 - Stub/reference sync rule in CLAUDE.md
 - Human-readable workflow documentation (`docs/workflow.md`)
 - `.skill` package installation option in README
+- CHANGELOG.md
 
 ### Fixed
 - Pest projector test pattern missing `RefreshDatabase` in `references/tdd-patterns.md`
