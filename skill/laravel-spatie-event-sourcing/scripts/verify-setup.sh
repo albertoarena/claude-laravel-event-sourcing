@@ -34,6 +34,8 @@ if ! grep -q '"spatie/laravel-event-sourcing"' composer.json; then
     echo "MISSING: spatie/laravel-event-sourcing not found in composer.json"
     echo "  Fix: composer require spatie/laravel-event-sourcing"
     ERRORS=$((ERRORS + 1))
+else
+    echo "OK: spatie/laravel-event-sourcing found"
 fi
 
 # 2. Check that stored_events and snapshots migrations have been published
@@ -43,6 +45,15 @@ if [ -d "$MIGRATION_DIR" ]; then
         echo "MISSING: stored_events migration not found"
         echo "  Fix: php artisan vendor:publish --provider=\"Spatie\EventSourcing\EventSourcingServiceProvider\" --tag=\"event-sourcing-migrations\""
         ERRORS=$((ERRORS + 1))
+    else
+        echo "OK: stored_events migration found"
+    fi
+    if ! ls "$MIGRATION_DIR"/*create_snapshots_table* 1>/dev/null 2>&1; then
+        echo "MISSING: snapshots migration not found"
+        echo "  Fix: php artisan vendor:publish --provider=\"Spatie\EventSourcing\EventSourcingServiceProvider\" --tag=\"event-sourcing-migrations\""
+        ERRORS=$((ERRORS + 1))
+    else
+        echo "OK: snapshots migration found"
     fi
 else
     echo "MISSING: database/migrations directory not found"
@@ -54,6 +65,8 @@ if [ ! -f config/event-sourcing.php ]; then
     echo "MISSING: config/event-sourcing.php not published"
     echo "  Fix: php artisan vendor:publish --provider=\"Spatie\EventSourcing\EventSourcingServiceProvider\" --tag=\"event-sourcing-config\""
     ERRORS=$((ERRORS + 1))
+else
+    echo "OK: config/event-sourcing.php published"
 fi
 
 # 4. Check test framework

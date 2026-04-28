@@ -24,15 +24,10 @@ Artifacts needed:
 
 ### H2. Fix verify-setup.sh
 
-**Status:** TODO
+**Status:** DONE
 **Impact:** Correctness — script doesn't match what SKILL.md promises
 
-Issues:
-1. **Missing snapshots migration check.** SKILL.md says the script checks for `snapshots` table, but the script only checks `*create_stored_events_table*`.
-2. **Inconsistent output.** PHP and test framework print `OK:` on success; spatie package and config checks are silent on success.
-3. **Script not executable.** Should `chmod +x` or document `bash scripts/verify-setup.sh`.
-
-Fix approach: straightforward edits to `scripts/verify-setup.sh`. Single task, no sub-plan needed.
+Fixed: added snapshots migration check, consistent `OK:` output for all checks on success, and `chmod +x`.
 
 ---
 
