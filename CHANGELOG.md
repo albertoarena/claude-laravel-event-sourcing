@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Added
 - Backlog plan with sub-plans for pending improvements
 - Human-readable workflow documentation (`docs/workflow.md`)
+- `.skill` package installation option in README
 
 ## [0.1.0] - 2025
 

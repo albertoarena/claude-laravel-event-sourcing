@@ -127,10 +127,10 @@ Added `CHANGELOG.md` with initial release entry. Added changelog tracking rule t
 
 ### L3. Document .skill package installation
 
-**Status:** TODO
+**Status:** DONE
 **Impact:** Easier onboarding
 
-The `laravel-spatie-event-sourcing.skill` ZIP package exists in the repo root but isn't mentioned in the README. Add a third installation option.
+Added Option B (.skill package) to README installation section. Shifted global clone to Option C.
 
 ---
 

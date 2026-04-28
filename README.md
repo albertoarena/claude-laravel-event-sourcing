@@ -26,9 +26,19 @@ rm -rf /tmp/claude-les
 
 The skill will be at `.claude/skills/laravel-spatie-event-sourcing/SKILL.md` inside your project. Claude Code picks it up automatically — no restart needed.
 
-### Option B: Global (all your projects)
+### Option B: Skill package (simplest)
 
-Install once for all your projects:
+Download the `.skill` package from the repo and add it directly in Claude Code:
+
+```bash
+curl -LO https://github.com/albertoarena/claude-laravel-event-sourcing/raw/main/laravel-spatie-event-sourcing.skill
+```
+
+Then install it via Claude Code's `/install-skill` command or place it in `~/.claude/skills/`.
+
+### Option C: Global (all your projects)
+
+Clone the full repo for all your projects:
 
 ```bash
 cd ~/.claude/skills
