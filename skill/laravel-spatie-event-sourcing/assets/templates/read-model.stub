@@ -9,4 +9,10 @@ class {{ name }} extends Projection
     protected $guarded = [];
 
     protected $table = '{{ table }}';
+
+    protected $primaryKey = 'uuid';
+
+    public $incrementing = false;
+
+    protected $keyType = 'string';
 }

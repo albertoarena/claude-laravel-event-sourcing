@@ -66,7 +66,7 @@ Added `uses(RefreshDatabase::class)` to the Pest projector test example in `refe
 
 ### M2. Fix read-model.stub UUID configuration
 
-**Status:** TODO
+**Status:** DONE
 **Impact:** Generated read models would fail on `::uuid()` lookups
 
 The stub extends `Projection` but doesn't set:

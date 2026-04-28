@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Fixed
 - Pest projector test pattern missing `RefreshDatabase` in `references/tdd-patterns.md`
+- `read-model.stub` missing UUID primary key configuration
 
 ## [0.1.0] - 2025
 
