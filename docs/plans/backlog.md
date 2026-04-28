@@ -109,16 +109,10 @@ Single edit to SKILL.md frontmatter. No sub-plan needed.
 
 ### L1. Add docs/ content
 
-**Status:** TODO
+**Status:** DONE
 **Impact:** User-facing documentation
 
-The spec (section 10) lists:
-- `docs/installation.md`
-- `docs/workflow.md` — the two gates explained for humans
-- `docs/design-heuristics.md` — prose version of the AI-facing heuristics
-- `docs/faq.md`
-
-**Suggestion:** Start with `workflow.md` only. The README already covers installation, and `design-heuristics.md` would largely duplicate the reference file. A FAQ is premature until there are actual user questions. Alternatively, expand the README with a "How it works" section instead of creating separate doc files.
+Added `docs/workflow.md` — human-readable explanation of the two-gate workflow. Skipped `installation.md` (README covers it), `design-heuristics.md` (would duplicate reference file), and `faq.md` (premature without user questions).
 
 ---
 
