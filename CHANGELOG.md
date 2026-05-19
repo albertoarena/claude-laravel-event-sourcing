@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 - Compatibility matrix in README (PHP 8.2+, Laravel 10.x–13.x, Spatie ES ^7.0)
+- `scripts/build-skill.sh` — reproducible build of the `.skill` archive from `skill/`
 
 ### Changed
 - README: added Release, License, Code size, and Claude Code Skill badges under the H1

@@ -112,7 +112,7 @@ Open question: should `verify-setup.sh` also check the Laravel version, or leave
 
 ### M7. Reproducible `.skill` packaging
 
-**Status:** PENDING
+**Status:** DONE
 **Impact:** Release hygiene — no manual zips, no drift between `skill/` and `.skill`
 
 Identified during pre-1.0 review (2026-05-19). Currently `laravel-spatie-event-sourcing.skill` is a manually-built zip. Contents currently match `skill/` exactly (verified), but there's no script enforcing this.

@@ -32,6 +32,10 @@ docs/                   — Human-readable documentation
 - Stub templates use `{{ placeholder }}` syntax.
 - Stub templates and reference file examples must stay in sync. When updating test patterns in `references/tdd-patterns.md`, update the corresponding `.stub` files in `assets/templates/`, and vice versa.
 
+## Releases
+
+- Before tagging a release, run `scripts/build-skill.sh` to regenerate `laravel-spatie-event-sourcing.skill` from the current `skill/` directory. The committed `.skill` artifact must match `skill/` contents at tag time.
+
 ## Changelog
 
 - Every major change (new features, breaking changes, significant fixes) must be tracked in `CHANGELOG.md`.
