@@ -5,6 +5,15 @@
 ![Code size](https://img.shields.io/github/languages/code-size/albertoarena/claude-laravel-event-sourcing?style=for-the-badge)
 ![Claude Code Skill](https://img.shields.io/badge/Claude%20Code-Skill-8A63D2?style=for-the-badge)
 
+## Compatibility
+
+| Requirement                       | Version                  |
+|-----------------------------------|--------------------------|
+| PHP                               | 8.2+                     |
+| Laravel                           | 10.x, 11.x, 12.x, 13.x   |
+| `spatie/laravel-event-sourcing`   | ^7.0                     |
+| Claude Code                       | any                      |
+
 A Claude Code skill that helps you design and generate event-sourced domain code for Laravel using [spatie/laravel-event-sourcing](https://github.com/spatie/laravel-event-sourcing).
 
 ## What it does

@@ -11,7 +11,10 @@ set -euo pipefail
 
 ERRORS=0
 
-# 0. Check PHP version (spatie/laravel-event-sourcing v7 requires PHP 8.2+)
+# 0. Check PHP version. Spatie ES v7 allows PHP ^8.0, but this skill targets
+#    PHP 8.2+ deliberately (modern Laravel norms, matches the supported range
+#    advertised in README). Laravel version is not checked here — Spatie's own
+#    composer constraints enforce it at install time.
 PHP_VERSION=$(php -r 'echo PHP_MAJOR_VERSION . "." . PHP_MINOR_VERSION;' 2>/dev/null || echo "0.0")
 PHP_MAJOR=$(echo "$PHP_VERSION" | cut -d. -f1)
 PHP_MINOR=$(echo "$PHP_VERSION" | cut -d. -f2)

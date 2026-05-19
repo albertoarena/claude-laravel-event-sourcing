@@ -6,8 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- Compatibility matrix in README (PHP 8.2+, Laravel 10.x–13.x, Spatie ES ^7.0)
+
 ### Changed
 - README: added Release, License, Code size, and Claude Code Skill badges under the H1
+- `verify-setup.sh`: corrected the misleading PHP version comment (Spatie ES v7 requires PHP ^8.0; this skill deliberately targets 8.2+)
 
 ## [0.2.0] - 2026-04-28
 

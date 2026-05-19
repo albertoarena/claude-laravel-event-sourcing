@@ -92,7 +92,7 @@ Identified during pre-1.0 review (2026-05-19). `[Unreleased]` section is current
 
 ### M6. Add compatibility matrix to README
 
-**Status:** PENDING
+**Status:** DONE
 **Impact:** Critical for a 1.0 contract — users must know what's supported
 
 Identified during pre-1.0 review (2026-05-19). `verify-setup.sh` encodes "Spatie ES v7, PHP 8.2+" in comments only; nothing user-facing states it.
