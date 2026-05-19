@@ -81,6 +81,68 @@ Proposed: merge the spec's aggressive trigger phrases with the current negative 
 
 ---
 
+### M5. Backfill `[Unreleased]` in CHANGELOG.md
+
+**Status:** DONE
+**Impact:** CLAUDE.md compliance — every notable change must be tracked
+
+Identified during pre-1.0 review (2026-05-19). `[Unreleased]` section is currently empty despite the README badges commit (`1bcf486`). Fix: add `### Changed` → "README badges" entry. Also worth establishing a habit (or pre-commit hook) so future README/SKILL.md changes don't bypass the changelog.
+
+---
+
+### M6. Add compatibility matrix to README
+
+**Status:** PENDING
+**Impact:** Critical for a 1.0 contract — users must know what's supported
+
+Identified during pre-1.0 review (2026-05-19). `verify-setup.sh` encodes "Spatie ES v7, PHP 8.2+" in comments only; nothing user-facing states it.
+
+**Proposed table** (place just below the badges):
+
+| Requirement                     | Version    |
+|---------------------------------|------------|
+| PHP                             | 8.2+       |
+| Laravel                         | 10.x, 11.x |
+| spatie/laravel-event-sourcing   | ^7.0       |
+| Claude Code                     | any        |
+
+Open question: should `verify-setup.sh` also check the Laravel version, or leave it implicit via Spatie's own composer constraints? Decide before writing the matrix.
+
+---
+
+### M7. Reproducible `.skill` packaging
+
+**Status:** PENDING
+**Impact:** Release hygiene — no manual zips, no drift between `skill/` and `.skill`
+
+Identified during pre-1.0 review (2026-05-19). Currently `laravel-spatie-event-sourcing.skill` is a manually-built zip. Contents currently match `skill/` exactly (verified), but there's no script enforcing this.
+
+**Plan:**
+1. Add `scripts/build-skill.sh` (~5 lines: `cd skill && zip -r ../laravel-spatie-event-sourcing.skill laravel-spatie-event-sourcing -x "*.DS_Store"`).
+2. Note in CLAUDE.md: "Run `scripts/build-skill.sh` before tagging a release."
+3. **Defer:** the GitHub Action that builds + attaches the artifact on tag push — handled in M8 (GitHub Actions workflows).
+
+Resolves the drift concern noted in pre-1.0 review point #6 permanently.
+
+---
+
+### M8. Add GitHub Actions workflows
+
+**Status:** PENDING
+**Impact:** CI hygiene — catch regressions in stubs, refs, and verify-setup.sh before release
+
+Identified during pre-1.0 review (2026-05-19). No `.github/` directory currently exists.
+
+**Process to follow** (per user instruction — do not just commit workflows):
+
+1. Explain before adding — describe each proposed workflow (what it runs, when it triggers, why it matters for a skill-only repo) so the user can decide which to include.
+2. Suggest how to improve — list candidate workflows: shellcheck on `verify-setup.sh`, markdownlint on SKILL.md + references, stub/reference sync check, automated eval runner, release-tag → `.skill` artifact builder.
+3. Explain how to improve — for each candidate, walk through trade-offs (maintenance cost, false-positive risk, real value for a repo with no PHP runtime code).
+4. Suggest how to do it — propose concrete YAML structure and which actions/runners to use.
+5. OK — wait for user approval before adding any `.github/workflows/*.yml`.
+
+---
+
 ## Priority: Low
 
 ### L1. Add docs/ content
@@ -98,6 +160,15 @@ Added `docs/workflow.md` — human-readable explanation of the two-gate workflow
 **Impact:** Project hygiene
 
 Added `CHANGELOG.md` with initial release entry. Added changelog tracking rule to `CLAUDE.md`.
+
+---
+
+### L4. Add CONTRIBUTING.md
+
+**Status:** PENDING
+**Impact:** Project hygiene — signals maturity, sets expectations for outside contributors
+
+Identified during pre-1.0 review (2026-05-19). Should cover: branch/PR conventions, commit message rules (already in CLAUDE.md — link or restate), the stub/reference sync rule, how to run evals locally, and the no-Claude-attribution policy.
 
 ---
 
