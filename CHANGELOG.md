@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-05-19
+
 ### Added
 - Compatibility matrix in README (PHP 8.2+, Laravel 10.x–13.x, Spatie ES ^7.0)
 - `scripts/build-skill.sh` — reproducible build of the `.skill` archive from `skill/`
