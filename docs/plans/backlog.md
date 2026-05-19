@@ -171,7 +171,7 @@ Added `CHANGELOG.md` with initial release entry. Added changelog tracking rule t
 
 ### L4. Add CONTRIBUTING.md
 
-**Status:** PENDING
+**Status:** DONE
 **Impact:** Project hygiene — signals maturity, sets expectations for outside contributors
 
 Identified during pre-1.0 review (2026-05-19). Should cover: branch/PR conventions, commit message rules (already in CLAUDE.md — link or restate), the stub/reference sync rule, how to run evals locally, and the no-Claude-attribution policy.
