@@ -128,6 +128,12 @@ Resolves the drift concern noted in pre-1.0 review point #6 permanently.
 
 ### M8. Add GitHub Actions workflows
 
+**Status:** DONE (partial — shellcheck + release builder shipped; markdownlint, stub-ref sync, and evals runner deferred)
+
+Added `.github/workflows/shellcheck.yml` (lint `*.sh`, severity warning, PRs + pushes to `main`) and `.github/workflows/release.yml` (build `.skill` via `scripts/build-skill.sh` and attach to GH release on `v*` tags). Other candidates from the original discussion (markdownlint, stub/reference sync check, eval runner) were deliberately deferred — see future M-items if/when needed.
+
+**Original process notes (kept for reference on future workflow additions):**
+
 **Status:** PENDING
 **Impact:** CI hygiene — catch regressions in stubs, refs, and verify-setup.sh before release
 
