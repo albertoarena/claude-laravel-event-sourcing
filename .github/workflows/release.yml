@@ -19,3 +19,4 @@ jobs:
         with:
           files: laravel-spatie-event-sourcing.skill
           fail_on_unmatched_files: true
+          prerelease: ${{ contains(github.ref, '-rc') || contains(github.ref, '-beta') || contains(github.ref, '-alpha') }}
