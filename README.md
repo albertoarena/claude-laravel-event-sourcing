@@ -1,5 +1,10 @@
 # Laravel Spatie Event Sourcing — Claude Code Skill
 
+![Release](https://img.shields.io/github/v/release/albertoarena/claude-laravel-event-sourcing?style=for-the-badge)
+![License](https://img.shields.io/github/license/albertoarena/claude-laravel-event-sourcing?style=for-the-badge)
+![Code size](https://img.shields.io/github/languages/code-size/albertoarena/claude-laravel-event-sourcing?style=for-the-badge)
+![Claude Code Skill](https://img.shields.io/badge/Claude%20Code-Skill-8A63D2?style=for-the-badge)
+
 A Claude Code skill that helps you design and generate event-sourced domain code for Laravel using [spatie/laravel-event-sourcing](https://github.com/spatie/laravel-event-sourcing).
 
 ## What it does
