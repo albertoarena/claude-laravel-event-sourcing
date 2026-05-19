@@ -1,7 +1,16 @@
 # Sub-plan: Update SKILL.md Description
 
 **Parent:** [backlog.md](./backlog.md) — M4
-**Status:** PENDING DECISION
+**Status:** RESOLVED — no change for 1.0 (2026-05-19)
+
+## Resolution
+
+Closed without adopting the proposed change. Rationale:
+
+- No under-triggering observed in 0.1 or 0.2 — speculative change without signal.
+- Proposed phrase *"even if they don't explicitly name the skill"* risks over-triggering on Laravel `Event::dispatch` questions, which contradicts the existing `Do NOT use for:` exclusion list.
+- A 1.0 description is a public contract; easier to loosen later than to tighten back.
+- Revisit in 1.1 if real activation data shows the skill is being missed.
 
 ## Problem
 

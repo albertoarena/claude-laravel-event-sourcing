@@ -73,11 +73,11 @@ Current stubs provide structure (namespace, imports, base class), while referenc
 
 ### M4. Use the spec's more aggressive skill description
 
-**Status:** PENDING DECISION
+**Status:** RESOLVED — no change for 1.0
 **Sub-plan:** [skill-description.md](./skill-description.md)
 **Impact:** Better skill triggering — current description may under-trigger
 
-Proposed: merge the spec's aggressive trigger phrases with the current negative boundaries. See sub-plan for full before/after comparison and trade-offs.
+**Decision (2026-05-19):** keep the current SKILL.md description. No telemetry from 0.1/0.2 indicates under-triggering, and the proposed "even if they don't explicitly name the skill" phrasing risks over-triggering on unrelated Laravel `Event::dispatch` questions — directly contradicting the skill's own `Do NOT use for:` exclusion list. Revisit in 1.1 if real activation data shows the skill is being missed.
 
 ---
 
