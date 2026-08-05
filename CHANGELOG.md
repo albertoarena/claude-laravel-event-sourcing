@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-08-05
+
 ### Added
 - Plugin marketplace packaging: `.claude-plugin/marketplace.json` and `plugins/laravel-spatie-event-sourcing/.claude-plugin/plugin.json`, enabling one-command install via `/plugin marketplace add` + `/plugin install`
 
