@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- CI: bump `actions/checkout` v4 → v7 and `softprops/action-gh-release` v2 → v3 to run on Node 24 (clears the Node 20 deprecation warning)
+
 ## [1.1.1] - 2026-08-05
 
 ### Added
