@@ -1,0 +1,12 @@
+{
+  "name": "albertoarena",
+  "description": "Alberto Arena's Claude Code plugins for Laravel and PHP development.",
+  "owner": { "name": "Alberto Arena" },
+  "plugins": [
+    {
+      "name": "laravel-spatie-event-sourcing",
+      "source": "./plugins/laravel-spatie-event-sourcing",
+      "description": "Design and generate Spatie/Laravel event-sourced domains (aggregates, events, projectors, reactors) through a design conversation."
+    }
+  ]
+}

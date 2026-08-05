@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- Plugin marketplace packaging: `.claude-plugin/marketplace.json` and `plugins/laravel-spatie-event-sourcing/.claude-plugin/plugin.json`, enabling one-command install via `/plugin marketplace add` + `/plugin install`
+
+### Changed
+- Skill source moved to `plugins/laravel-spatie-event-sourcing/skills/laravel-spatie-event-sourcing/` (now the single source of truth); `scripts/build-skill.sh` builds the `.skill` archive from the new location
+- README: lead with the one-command plugin install; copy-folder and `.skill` routes are now documented as fallbacks
+- CLAUDE.md and CONTRIBUTING.md: updated repo layout and paths for the plugin structure
+
 ## [1.0.0] - 2026-05-19
 
 ### Added

@@ -26,40 +26,41 @@ This skill guides you through a **two-gate workflow**:
 
 ## Installation
 
-### Option A: Per-project (recommended for teams)
+### Recommended: one-command plugin install
 
-Add the skill to your Laravel project so it's shared via git with your team:
+Inside Claude Code, add the marketplace and install the plugin:
 
 ```bash
-# From your Laravel project root
-mkdir -p .claude/skills
+/plugin marketplace add albertoarena/claude-laravel-event-sourcing
+/plugin install laravel-spatie-event-sourcing@albertoarena
+```
+
+Claude Code shows a details panel (description, author, version, and what will
+be installed) and lets you pick a scope — User (all your projects), Project
+(shared with your team via git), or Local. The skill loads automatically once
+installed.
+
+### Manual fallback: copy the skill folder
+
+If you'd rather not use the plugin system, copy the skill directory into any
+skills location and Claude Code picks it up automatically next session:
+
+```bash
 git clone https://github.com/albertoarena/claude-laravel-event-sourcing.git /tmp/claude-les
-cp -r /tmp/claude-les/skill/laravel-spatie-event-sourcing .claude/skills/
+cp -r /tmp/claude-les/plugins/laravel-spatie-event-sourcing/skills/laravel-spatie-event-sourcing \
+  ~/.claude/skills/                       # global, or .claude/skills/ inside a project
 rm -rf /tmp/claude-les
 ```
 
-The skill will be at `.claude/skills/laravel-spatie-event-sourcing/SKILL.md` inside your project. Claude Code picks it up automatically — no restart needed.
+### Manual fallback: `.skill` package
 
-### Option B: Skill package (simplest)
-
-Download the `.skill` package from the repo and add it directly in Claude Code:
+Download the packaged archive and install it via Claude Code:
 
 ```bash
 curl -LO https://github.com/albertoarena/claude-laravel-event-sourcing/raw/main/laravel-spatie-event-sourcing.skill
 ```
 
 Then install it via Claude Code's `/install-skill` command or place it in `~/.claude/skills/`.
-
-### Option C: Global (all your projects)
-
-Clone the full repo for all your projects:
-
-```bash
-cd ~/.claude/skills
-git clone https://github.com/albertoarena/claude-laravel-event-sourcing.git
-```
-
-The skill is at `~/.claude/skills/claude-laravel-event-sourcing/skill/laravel-spatie-event-sourcing/SKILL.md`.
 
 ## Prerequisites
 
