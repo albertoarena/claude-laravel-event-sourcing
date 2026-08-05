@@ -39,9 +39,36 @@ docs/                   — Human-readable documentation
 
 ## Releases
 
-- Before tagging a release, run `scripts/build-skill.sh` to regenerate `laravel-spatie-event-sourcing.skill` from the canonical skill directory under `plugins/`. The committed `.skill` artifact must match the skill contents at tag time.
-- Bump `version` in `plugins/laravel-spatie-event-sourcing/.claude-plugin/plugin.json` to match the release tag so `/plugin install` users get update control.
-- Primary install path is the plugin marketplace (`/plugin install`); the `.skill` archive is the manual fallback.
+The plugin is distributed through the marketplace in this repo. `/plugin install`
+users only receive an update when the `version` in the plugin manifest changes,
+so **every release starts by bumping that version**.
+
+### How to release
+
+1. **Bump the plugin version.** Edit `version` in
+   `plugins/laravel-spatie-event-sourcing/.claude-plugin/plugin.json` to the new
+   `X.Y.Z` (semver: patch = metadata/docs, minor = new skill capability, major =
+   breaking change). This is the field that gives `/plugin install` users update
+   control — if it doesn't change, they don't see the release.
+2. **Roll the changelog.** Rename `[Unreleased]` → `[X.Y.Z] - YYYY-MM-DD` in
+   `CHANGELOG.md` and add a fresh empty `[Unreleased]` above it.
+3. **Rebuild the `.skill` artifact.** Run `scripts/build-skill.sh` so the
+   committed `laravel-spatie-event-sourcing.skill` matches the canonical skill
+   under `plugins/`. (Skip re-committing it if only the manifest/docs changed —
+   `plugin.json` and README are not inside the archive, so its content is
+   unchanged.)
+4. **Validate.** `claude plugin validate . --strict` and
+   `claude plugin validate ./plugins/laravel-spatie-event-sourcing --strict` must
+   both pass.
+5. **PR to `main` and merge.** `/plugin marketplace add` resolves against the
+   GitHub default branch, so users only get the change once it lands on `main`.
+6. **Tag and push.** `git tag -a vX.Y.Z -m "vX.Y.Z"` then
+   `git push origin vX.Y.Z`. The `release.yml` workflow rebuilds the `.skill` and
+   attaches it to the GitHub release automatically.
+
+Keep the `plugin.json` `version` and the git tag in sync (`vX.Y.Z` ↔ `X.Y.Z`).
+Primary install path is the marketplace (`/plugin install`); the `.skill` archive
+is the manual fallback.
 
 ## Changelog
 
