@@ -1,0 +1,6 @@
+{
+  "name": "laravel-spatie-event-sourcing",
+  "description": "Design and generate Spatie/Laravel event-sourced domains through a design conversation.",
+  "version": "1.0.0",
+  "author": { "name": "Alberto Arena" }
+}

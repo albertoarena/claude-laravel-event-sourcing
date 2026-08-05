@@ -5,7 +5,10 @@ Thanks for your interest in this Claude Code skill. This document covers the con
 ## Repo layout
 
 ```
-skill/laravel-spatie-event-sourcing/   The skill itself (SKILL.md, references, stubs, scripts)
+.claude-plugin/marketplace.json                                 Marketplace catalog
+plugins/laravel-spatie-event-sourcing/.claude-plugin/plugin.json  Plugin manifest
+plugins/laravel-spatie-event-sourcing/skills/laravel-spatie-event-sourcing/
+                                       The skill itself (SKILL.md, references, stubs, scripts)
 examples/                              Worked examples
 docs/                                  Human-readable documentation
 scripts/                               Repo-level scripts (e.g. build-skill.sh)
@@ -41,7 +44,7 @@ These are the rules the skill enforces and that any contribution touching them s
 
 ### SKILL.md size
 
-Keep `skill/laravel-spatie-event-sourcing/SKILL.md` under 500 lines. Detail belongs in `references/`; the main file is a prompt, not a manual.
+Keep `plugins/laravel-spatie-event-sourcing/skills/laravel-spatie-event-sourcing/SKILL.md` under 500 lines. Detail belongs in `references/`; the main file is a prompt, not a manual.
 
 ### Commit messages
 
@@ -79,8 +82,9 @@ Pre-release tags (`-rc`, `-beta`, `-alpha` suffix) are auto-marked as pre-releas
 
 Before pushing:
 
-- `scripts/build-skill.sh` — rebuilds the `.skill` archive; verify it still matches `skill/` contents.
-- `shellcheck scripts/build-skill.sh skill/laravel-spatie-event-sourcing/scripts/verify-setup.sh` — if you have `shellcheck` installed locally. CI runs this for you on `*.sh` changes either way.
+- `scripts/build-skill.sh` — rebuilds the `.skill` archive; verify it still matches the canonical skill contents under `plugins/`.
+- `claude plugin validate . --strict` and `claude plugin validate ./plugins/laravel-spatie-event-sourcing --strict` — validate the marketplace and plugin manifests.
+- `shellcheck scripts/build-skill.sh plugins/laravel-spatie-event-sourcing/skills/laravel-spatie-event-sourcing/scripts/verify-setup.sh` — if you have `shellcheck` installed locally. CI runs this for you on `*.sh` changes either way.
 
 ## Evals
 

@@ -2,16 +2,21 @@
 
 ## What this repo is
 
-A Claude Code skill that generates event-sourced domain code for Laravel using `spatie/laravel-event-sourcing`. The skill lives in `skill/laravel-spatie-event-sourcing/`.
+A Claude Code skill that generates event-sourced domain code for Laravel using `spatie/laravel-event-sourcing`. The repo is packaged as an installable plugin marketplace; the skill is the single source of truth and lives in `plugins/laravel-spatie-event-sourcing/skills/laravel-spatie-event-sourcing/`.
 
 ## Repo layout
 
 ```
-skill/laravel-spatie-event-sourcing/
-  SKILL.md              — Main skill file (frontmatter + instructions)
-  references/           — Design heuristics, ADR template, TDD patterns, API cheatsheet
-  assets/templates/     — .stub files for code generation
-  scripts/              — verify-setup.sh (project bootstrap)
+.claude-plugin/
+  marketplace.json      — Marketplace catalog (marketplace name: albertoarena)
+plugins/laravel-spatie-event-sourcing/
+  .claude-plugin/
+    plugin.json         — Plugin manifest (name, description, version, author)
+  skills/laravel-spatie-event-sourcing/   — canonical skill source
+    SKILL.md            — Main skill file (frontmatter + instructions)
+    references/         — Design heuristics, ADR template, TDD patterns, API cheatsheet
+    assets/templates/   — .stub files for code generation
+    scripts/            — verify-setup.sh (project bootstrap)
 examples/orders/        — Worked example (order management domain)
 docs/                   — Human-readable documentation
 ```
@@ -34,7 +39,9 @@ docs/                   — Human-readable documentation
 
 ## Releases
 
-- Before tagging a release, run `scripts/build-skill.sh` to regenerate `laravel-spatie-event-sourcing.skill` from the current `skill/` directory. The committed `.skill` artifact must match `skill/` contents at tag time.
+- Before tagging a release, run `scripts/build-skill.sh` to regenerate `laravel-spatie-event-sourcing.skill` from the canonical skill directory under `plugins/`. The committed `.skill` artifact must match the skill contents at tag time.
+- Bump `version` in `plugins/laravel-spatie-event-sourcing/.claude-plugin/plugin.json` to match the release tag so `/plugin install` users get update control.
+- Primary install path is the plugin marketplace (`/plugin install`); the `.skill` archive is the manual fallback.
 
 ## Changelog
 
