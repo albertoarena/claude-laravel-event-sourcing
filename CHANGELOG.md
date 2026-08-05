@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [1.1.1] - 2026-08-05
+
+### Added
+- Plugin manifest metadata for the official directory listing: `displayName`, `homepage`, `repository`, `license`, `keywords`, and `$schema`
+- Plugin-level `README.md` under `plugins/laravel-spatie-event-sourcing/`
+
 ## [1.1.0] - 2026-08-05
 
 ### Added

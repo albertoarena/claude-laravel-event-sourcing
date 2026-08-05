@@ -1,6 +1,12 @@
 {
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "laravel-spatie-event-sourcing",
+  "displayName": "Laravel Spatie Event Sourcing",
   "description": "Design and generate Spatie/Laravel event-sourced domains through a design conversation.",
-  "version": "1.1.0",
-  "author": { "name": "Alberto Arena" }
+  "version": "1.1.1",
+  "author": { "name": "Alberto Arena" },
+  "homepage": "https://github.com/albertoarena/claude-laravel-event-sourcing",
+  "repository": "https://github.com/albertoarena/claude-laravel-event-sourcing",
+  "license": "MIT",
+  "keywords": ["laravel", "php", "event-sourcing", "spatie", "ddd", "aggregates", "projectors"]
 }
