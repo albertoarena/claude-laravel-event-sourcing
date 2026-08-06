@@ -101,6 +101,12 @@ database/migrations/     — Read-model table migrations
 - **Greenfield only** — This skill generates new event-sourced domains. It does not refactor existing CRUD code into event sourcing.
 - **Laravel + Spatie ES v7** — Specifically designed for this stack.
 
+## 📬 Stay updated
+
+Occasional emails on Claude Code, Laravel, and event sourcing: new releases, packages, and write-ups. No spam, unsubscribe anytime.
+
+**[Subscribe to the newsletter →](https://albertoarena.it/subscribe/?utm_source=github&utm_medium=readme&utm_campaign=newsletter&utm_content=claude-laravel-event-sourcing)**
+
 ## License
 
 MIT
