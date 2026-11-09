@@ -109,7 +109,7 @@ Subscribe and get my free Spatie Event Sourcing cheat sheet (printable PDF), plu
 
 ## Privacy
 
-This plugin collects, stores, and transmits no data. It is a set of instructions, reference docs, and code templates that Claude Code reads locally. Generated code is written only to your project. The bundled `verify-setup.sh` only reads local files (`composer.json`, `config/`, migrations) and makes no network calls. Anything Claude sends to Anthropic is governed by your Claude Code settings and [Anthropic's privacy policy](https://www.anthropic.com/legal/privacy), not by this plugin.
+This plugin collects, stores, and transmits no data. It is a set of instructions, reference docs, and code templates that Claude Code reads locally. Generated code is written only to your project. The setup checks only read local files (`composer.json`, `config/`, migrations) and the PHP version, and make no network calls. Anything Claude sends to Anthropic is governed by your Claude Code settings and [Anthropic's privacy policy](https://www.anthropic.com/legal/privacy), not by this plugin.
 
 ## License
 

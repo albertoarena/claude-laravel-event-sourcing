@@ -1,3 +1,8 @@
+# Reactor test (PHPUnit) template
+
+Starting point for code generation. Copy the code block and replace each `{{ placeholder }}`.
+
+```php
 <?php
 
 namespace Tests\Feature\{{ context }};
@@ -25,3 +30,4 @@ class {{ name }}ReactorTest extends TestCase
         // e.g. Mail::assertSent(SomeMail::class);
     }
 }
+```

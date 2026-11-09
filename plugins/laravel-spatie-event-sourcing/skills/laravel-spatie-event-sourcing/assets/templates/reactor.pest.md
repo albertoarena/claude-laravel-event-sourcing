@@ -1,3 +1,8 @@
+# Reactor test (Pest) template
+
+Starting point for code generation. Copy the code block and replace each `{{ placeholder }}`.
+
+```php
 <?php
 
 use App\Domain\{{ context }}\Events\{{ eventName }};
@@ -18,3 +23,4 @@ it('{{ sideEffect }} on {{ eventName }}', function () {
     // TODO: Assert the side effect was triggered
     // e.g. Mail::assertSent(SomeMail::class);
 });
+```

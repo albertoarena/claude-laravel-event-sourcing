@@ -48,8 +48,8 @@ for full documentation and a worked example.
 ## Privacy
 
 This plugin collects, stores, and transmits no data. It runs locally inside
-Claude Code; generated code is written only to your project, and the bundled
-`verify-setup.sh` only reads local files. See the
+Claude Code; generated code is written only to your project, and the setup
+checks only read local files. See the
 [privacy section](https://github.com/albertoarena/claude-laravel-event-sourcing#privacy)
 of the repository README.
 

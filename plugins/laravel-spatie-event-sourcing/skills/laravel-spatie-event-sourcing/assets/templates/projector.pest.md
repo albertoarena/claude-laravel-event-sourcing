@@ -1,3 +1,8 @@
+# Projector test (Pest) template
+
+Starting point for code generation. Copy the code block and replace each `{{ placeholder }}`.
+
+```php
 <?php
 
 use App\Domain\{{ context }}\Events\{{ eventName }};
@@ -29,3 +34,4 @@ it('is idempotent — handles the same event twice', function () {
 
     expect({{ readModel }}::where('uuid', $uuid)->count())->toBe(1);
 });
+```
