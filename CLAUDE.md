@@ -63,12 +63,12 @@ so **every release starts by bumping that version**.
 5. **PR to `main` and merge.** `/plugin marketplace add` resolves against the
    GitHub default branch, so users only get the change once it lands on `main`.
 6. **Tag and push.** Every tag is annotated with a short description: a
-   subject line `vX.Y.Z — <one-line summary>`, a blank line, then 2–4 bullets
+   subject line `vX.Y.Z: <one-line summary>`, a blank line, then 2–4 bullets
    condensed from that version's `CHANGELOG.md` entry. Never use the bare
    version as the message.
    ```bash
    git tag -a vX.Y.Z -F - <<'EOF'
-   vX.Y.Z — Short summary of the release
+   vX.Y.Z: Short summary of the release
 
    - Main change
    - Other notable change
@@ -76,8 +76,9 @@ so **every release starts by bumping that version**.
    git push origin vX.Y.Z
    ```
    The `release.yml` workflow rebuilds the `.skill` and attaches it to the
-   GitHub release. Then set the same description as the release notes:
-   `gh release edit vX.Y.Z --notes "<description>"`.
+   GitHub release. Wait for that run to finish (`gh run watch`), since it is
+   what creates the release, then set the same description as the release
+   title and notes: `gh release edit vX.Y.Z --title "vX.Y.Z: <summary>" --notes "<bullets>"`.
 
 Keep the `plugin.json` `version` and the git tag in sync (`vX.Y.Z` ↔ `X.Y.Z`).
 Primary install path is the marketplace (`/plugin install`); the `.skill` archive

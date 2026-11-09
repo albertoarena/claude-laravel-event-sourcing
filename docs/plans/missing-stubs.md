@@ -3,6 +3,8 @@
 **Parent:** [backlog.md](./backlog.md) — H3
 **Status:** DONE
 
+> **Note:** In v1.2.0 the `.stub` files became Markdown templates (`assets/templates/*.md`, PHP in a fenced block) because the plugin directory refuses non-Markdown code files. The names below are historical.
+
 ## Goal
 
 Add stub templates for every artifact type the skill generates, so code generation has consistent scaffolding.
