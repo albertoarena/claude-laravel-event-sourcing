@@ -15,8 +15,7 @@ plugins/laravel-spatie-event-sourcing/
   skills/laravel-spatie-event-sourcing/   — canonical skill source
     SKILL.md            — Main skill file (frontmatter + instructions)
     references/         — Design heuristics, ADR template, TDD patterns, API cheatsheet
-    assets/templates/   — .stub files for code generation
-    scripts/            — verify-setup.sh (project bootstrap)
+    assets/templates/   — Markdown code-generation templates (PHP in a fenced block)
 examples/orders/        — Worked example (order management domain)
 docs/                   — Human-readable documentation
 ```
@@ -35,7 +34,8 @@ docs/                   — Human-readable documentation
 - When editing the skill, keep SKILL.md under 500 lines.
 - Reference files provide detail that doesn't need to be in the main prompt.
 - Stub templates use `{{ placeholder }}` syntax.
-- Stub templates and reference file examples must stay in sync. When updating test patterns in `references/tdd-patterns.md`, update the corresponding `.stub` files in `assets/templates/`, and vice versa.
+- Stub templates and reference file examples must stay in sync. When updating test patterns in `references/tdd-patterns.md`, update the corresponding templates in `assets/templates/`, and vice versa.
+- The plugin folder may contain only Markdown, text, JSON, YAML and PNG/JPEG/GIF/WebP/ICO files, and no file may start with `#!`. The plugin directory refuses anything else from non-Verified organizations. Put code in fenced blocks inside `.md` files; never add `.stub`, `.sh`, `.php` or other script files under `plugins/`.
 
 ## Releases
 
@@ -62,9 +62,22 @@ so **every release starts by bumping that version**.
    both pass.
 5. **PR to `main` and merge.** `/plugin marketplace add` resolves against the
    GitHub default branch, so users only get the change once it lands on `main`.
-6. **Tag and push.** `git tag -a vX.Y.Z -m "vX.Y.Z"` then
-   `git push origin vX.Y.Z`. The `release.yml` workflow rebuilds the `.skill` and
-   attaches it to the GitHub release automatically.
+6. **Tag and push.** Every tag is annotated with a short description: a
+   subject line `vX.Y.Z — <one-line summary>`, a blank line, then 2–4 bullets
+   condensed from that version's `CHANGELOG.md` entry. Never use the bare
+   version as the message.
+   ```bash
+   git tag -a vX.Y.Z -F - <<'EOF'
+   vX.Y.Z — Short summary of the release
+
+   - Main change
+   - Other notable change
+   EOF
+   git push origin vX.Y.Z
+   ```
+   The `release.yml` workflow rebuilds the `.skill` and attaches it to the
+   GitHub release. Then set the same description as the release notes:
+   `gh release edit vX.Y.Z --notes "<description>"`.
 
 Keep the `plugin.json` `version` and the git tag in sync (`vX.Y.Z` ↔ `X.Y.Z`).
 Primary install path is the marketplace (`/plugin install`); the `.skill` archive

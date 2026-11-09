@@ -23,11 +23,12 @@ Generate event-sourced domain code for Laravel using `spatie/laravel-event-sourc
 - `references/tdd-patterns.md` — Pest and PHPUnit test patterns
 - `references/commands-pattern.md` — Command + handler patterns (plain and bus-dispatched)
 - `references/spatie-api-cheatsheet.md` — Key Spatie ES classes and methods
-- `assets/templates/*.stub` — Code generation stubs
+- `references/setup-checks.md` — Project setup checks (run on first invocation)
+- `assets/templates/*.md` — Code generation templates (PHP in a fenced block)
 
 ## Project bootstrap (one-time, automatic)
 
-On first invocation in a project, run `scripts/verify-setup.sh` from this skill's directory. It checks:
+On first invocation in a project, follow `references/setup-checks.md` from the Laravel project root. It checks:
 
 0. PHP 8.2+ is installed (required by `spatie/laravel-event-sourcing` v7)
 1. `spatie/laravel-event-sourcing` is in `composer.json`
@@ -94,7 +95,7 @@ Generation order:
 10. Run the test suite (`./vendor/bin/pest` or `./vendor/bin/phpunit`)
 11. Report: list of files created + test output
 
-Use the stub templates in `assets/templates/` as starting points. Read `references/tdd-patterns.md` for test structure and `references/commands-pattern.md` for command/handler patterns.
+Use the templates in `assets/templates/` as starting points (the PHP is in each file's fenced code block). Read `references/tdd-patterns.md` for test structure and `references/commands-pattern.md` for command/handler patterns.
 
 **Stop here.** Present the results. The user approves, requests changes, or moves to the next feature.
 

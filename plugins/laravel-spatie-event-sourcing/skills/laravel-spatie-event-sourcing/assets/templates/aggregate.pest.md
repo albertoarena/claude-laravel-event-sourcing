@@ -1,3 +1,8 @@
+# Aggregate test (Pest) template
+
+Starting point for code generation. Copy the code block and replace each `{{ placeholder }}`.
+
+```php
 <?php
 
 use App\Domain\{{ context }}\Aggregates\{{ name }}Aggregate;
@@ -13,3 +18,4 @@ it('records {{ eventName }} when {{ action }}', function () {
             // new {{ eventName }}(/* expected payload */),
         ]);
 });
+```

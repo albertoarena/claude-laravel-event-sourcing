@@ -33,7 +33,7 @@
     {
       "id": 3,
       "prompt": "I want to event-source my inventory tracking. Products can be received, sold, adjusted, and transferred between warehouses. I need a stock level projector.",
-      "expected_output": "The skill should run verify-setup.sh first. Since spatie/laravel-event-sourcing is not installed, it should stop and tell the user to install it — no ADR, no code generation.",
+      "expected_output": "The skill should run the setup checks in references/setup-checks.md first. Since spatie/laravel-event-sourcing is not installed, it should stop and tell the user to install it — no ADR, no code generation.",
       "files": [],
       "expectations": [
         "Response mentions that spatie/laravel-event-sourcing is not installed or missing",

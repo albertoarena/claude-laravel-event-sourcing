@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-11-09
+
+### Changed
+- Code-generation templates are now Markdown: each `assets/templates/*.stub` becomes `*.md` with the PHP in a fenced block (placeholders unchanged)
+- Project setup checks moved from `scripts/verify-setup.sh` to `references/setup-checks.md`, which Claude follows with its own read-only tools
+- CLAUDE.md: tags must be annotated with a short description, mirrored in the GitHub release notes; the plugin folder may hold only directory-allowed file types
+
+### Removed
+- `scripts/verify-setup.sh` (replaced by `references/setup-checks.md`)
+
 ## [1.1.2] - 2026-11-09
 
 ### Added

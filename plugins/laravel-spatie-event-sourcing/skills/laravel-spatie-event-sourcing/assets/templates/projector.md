@@ -1,3 +1,8 @@
+# Projector template
+
+Starting point for code generation. Copy the code block and replace each `{{ placeholder }}`.
+
+```php
 <?php
 
 namespace App\Domain\{{ context }}\Projectors;
@@ -10,3 +15,4 @@ class {{ name }}Projector extends Projector
     // Create: (new ReadModel([...]))->writeable()->save()
     // Update: $model = ReadModel::uuid($uuid); $model->field = ...; $model->writeable()->save()
 }
+```

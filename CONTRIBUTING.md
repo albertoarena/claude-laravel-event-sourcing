@@ -8,7 +8,7 @@ Thanks for your interest in this Claude Code skill. This document covers the con
 .claude-plugin/marketplace.json                                 Marketplace catalog
 plugins/laravel-spatie-event-sourcing/.claude-plugin/plugin.json  Plugin manifest
 plugins/laravel-spatie-event-sourcing/skills/laravel-spatie-event-sourcing/
-                                       The skill itself (SKILL.md, references, stubs, scripts)
+                                       The skill itself (SKILL.md, references, templates)
 examples/                              Worked examples
 docs/                                  Human-readable documentation
 scripts/                               Repo-level scripts (e.g. build-skill.sh)
@@ -30,7 +30,7 @@ Direct pushes to `main` are reserved for maintainers and should still go through
 
 ### Stub / reference sync
 
-Stubs in `assets/templates/*.stub` and the patterns documented in `references/tdd-patterns.md` (and other reference files) **must stay in sync**. If you change a test pattern in a reference file, update the corresponding stub, and vice versa. This is mandated in `CLAUDE.md` and is the kind of drift that breaks code generation silently.
+Templates in `assets/templates/*.md` and the patterns documented in `references/tdd-patterns.md` (and other reference files) **must stay in sync**. If you change a test pattern in a reference file, update the corresponding template, and vice versa. This is mandated in `CLAUDE.md` and is the kind of drift that breaks code generation silently.
 
 ### Generated-code conventions
 
@@ -84,7 +84,7 @@ Before pushing:
 
 - `scripts/build-skill.sh` — rebuilds the `.skill` archive; verify it still matches the canonical skill contents under `plugins/`.
 - `claude plugin validate . --strict` and `claude plugin validate ./plugins/laravel-spatie-event-sourcing --strict` — validate the marketplace and plugin manifests.
-- `shellcheck scripts/build-skill.sh plugins/laravel-spatie-event-sourcing/skills/laravel-spatie-event-sourcing/scripts/verify-setup.sh` — if you have `shellcheck` installed locally. CI runs this for you on `*.sh` changes either way.
+- `shellcheck scripts/build-skill.sh` — if you have `shellcheck` installed locally. CI runs this for you on `*.sh` changes either way.
 
 ## Evals
 

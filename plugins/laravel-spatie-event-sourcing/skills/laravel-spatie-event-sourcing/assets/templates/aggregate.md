@@ -1,3 +1,8 @@
+# Aggregate root template
+
+Starting point for code generation. Copy the code block and replace each `{{ placeholder }}`.
+
+```php
 <?php
 
 namespace App\Domain\{{ context }}\Aggregates;
@@ -12,3 +17,4 @@ class {{ name }}Aggregate extends AggregateRoot
 
     // TODO: Add apply methods that update internal state
 }
+```
