@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [1.1.2] - 2026-11-09
+
+### Added
+- Plugin icon (`.claude-plugin/icon.png`, 512×512) and directory listing fields in `plugin.json`: `icon`, `documentationUrl`, `supportUrl`, `privacyPolicyUrl`
+- Privacy section in the repository and plugin READMEs
+
 ### Changed
 - CI: bump `actions/checkout` v4 → v7 and `softprops/action-gh-release` v2 → v3 to run on Node 24 (clears the Node 20 deprecation warning)
 
